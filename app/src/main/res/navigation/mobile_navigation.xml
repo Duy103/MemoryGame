@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.memorize.game.zip.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_levels"
+            app:destination="@id/navigation_levels" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigaion_login"
+            app:destination="@id/navigaion_login" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_levels"
+        android:name="com.memorize.game.zip.ui.levels.LevelsFragment"
+        android:label="@string/title_levels"
+        tools:layout="@layout/fragment_levels">
+        <action
+            android:id="@+id/action_navigation_levels_to_navigation_play"
+            app:destination="@id/navigation_play" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_play"
+        android:name="com.memorize.game.zip.ui.play.PlayFragment"
+        android:label="@string/title_play"
+        tools:layout="@layout/fragment_play" />
+
+    <fragment
+        android:id="@+id/navigaion_login"
+        android:name="com.memorize.game.zip.ui.login.LoginFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_navigaion_login_to_navigaion_register"
+            app:destination="@id/navigaion_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigaion_register"
+        android:name="com.memorize.game.zip.ui.register.RegisterFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_navigaion_register_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.memorize.game.zip.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
